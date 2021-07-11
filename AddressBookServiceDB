@@ -16,3 +16,40 @@ mysql> show databases;
 | sys                 |
 +---------------------+
 6 rows in set (0.20 sec)
+---------UC2---Create Table-------------
+mysql> USE addressbook_service;
+Database changed
+mysql> CREATE TABLE addressbook(
+    -> firstName VARCHAR(100) NOT NULL,
+    -> lastName VARCHAR(100) NOT NULL,
+    -> address VARCHAR(100) NOT NULL,
+    -> city VARCHAR(100) NOT NULL,
+    -> state VARCHAR(100) NOT NULL,
+    -> zip INT(100) NOT NULL,
+    -> phoneNumber BIGINT NOT NULL,
+    -> email VARCHAR(100) NOT NULL,
+    -> PRIMARY KEY(firstName)
+    -> );
+Query OK, 0 rows affected, 1 warning (2.23 sec)
+mysql> SHOW TABLES;
++-------------------------------+
+| Tables_in_addressbook_service |
++-------------------------------+
+| addressbook                   |
++-------------------------------+
+1 row in set (0.21 sec)
+
+mysql> DESC addressbook;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstName   | varchar(100) | NO   | PRI | NULL    |       |
+| lastName    | varchar(100) | NO   |     | NULL    |       |
+| address     | varchar(100) | NO   |     | NULL    |       |
+| city        | varchar(100) | NO   |     | NULL    |       |
+| state       | varchar(100) | NO   |     | NULL    |       |
+| zip         | int          | NO   |     | NULL    |       |
+| phoneNumber | bigint       | NO   |     | NULL    |       |
+| email       | varchar(100) | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.11 sec)
