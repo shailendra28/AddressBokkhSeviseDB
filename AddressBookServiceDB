@@ -1,9 +1,11 @@
 WELCOME TO ADDRESSBOOK SYSTEM
----------UC1---Create Database-------------
+---------UC1---Create Database------------------------------------------
 
+// In this case I have first created DATABASE of Name AddressBook_service
 mysql> CREATE DATABASE AddressBook_service;
 Query OK, 1 row affected (0.34 sec)
 
+// Here I am checking the DATABASE in the list of DATABASE
 mysql> show databases;
 +---------------------+
 | Database            |
@@ -16,9 +18,14 @@ mysql> show databases;
 | sys                 |
 +---------------------+
 6 rows in set (0.20 sec)
----------UC2---Create Table-------------
+
+---------UC2---Create Table------------------------------------------------
+
+// In this case I used DATABASE of Name addressbook_service
 mysql> USE addressbook_service;
 Database changed
+
+// Here I am creating Table of Name addressbook
 mysql> CREATE TABLE addressbook(
     -> firstName VARCHAR(100) NOT NULL,
     -> lastName VARCHAR(100) NOT NULL,
@@ -31,6 +38,8 @@ mysql> CREATE TABLE addressbook(
     -> PRIMARY KEY(firstName)
     -> );
 Query OK, 0 rows affected, 1 warning (2.23 sec)
+
+//Here I am checking Table is created or not in the addressbook_service DATABASE
 mysql> SHOW TABLES;
 +-------------------------------+
 | Tables_in_addressbook_service |
@@ -39,6 +48,7 @@ mysql> SHOW TABLES;
 +-------------------------------+
 1 row in set (0.21 sec)
 
+// Once the creation of table done Here I am checking Table Field
 mysql> DESC addressbook;
 +-------------+--------------+------+-----+---------+-------+
 | Field       | Type         | Null | Key | Default | Extra |
@@ -53,3 +63,31 @@ mysql> DESC addressbook;
 | email       | varchar(100) | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.11 sec)
+
+---------UC3---ADDED CONTACTS-------------------------------------------------------
+// Here I have Inserted New Contact to the table addressbook
+mysql> INSERT INTO addressbook VALUES
+    -> ('Shailendra','Kumar','Chembur','Mumbai','Maharashtra','400071','87797965
+56','yshailendrakumar1768@gmail.com'),
+    -> ('Mahesh','jadhav','vangali','Noyada','UtterPradesh','501201','9969550645
+','mahesh123@gmail.com'),
+    -> ('Rani','Singh','Rajapuram','Chennai','Kerala','450213','9969064650','ran
+i45@gmail.com'),
+    -> ('Mahi','Pratap','Kamaleshwarpur','Rohatang','Laddakh','321654','89896858
+52','mahi@gmail.com');
+Query OK, 4 rows affected (0.23 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+4 rows in set (0.05 sec)
+
+// This command will show the list of contacts which I have inserted into the addressbook
+mysql> SELECT * from addressbook;
++------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
+| firstName  | lastName | address        | city     | state        | zip    | phoneNumber | email                          |
++------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
+| Mahesh     | jadhav   | vangali        | Noyada   | UtterPradesh | 501201 |  9969550645 | mahesh123@gmail.com            |
+| Mahi       | Pratap   | Kamaleshwarpur | Rohatang | Laddakh      | 321654 |  8989685852 | mahi@gmail.com                 |
+| Rani       | Singh    | Rajapuram      | Chennai  | Kerala       | 450213 |  9969064650 | rani45@gmail.com               |
+| Shailendra | Kumar    | Chembur        | Mumbai   | Maharashtra  | 400071 |  8779796556 | yshailendrakumar1768@gmail.com |
++------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
+4 rows in set (0.00 sec)
