@@ -254,3 +254,29 @@ mysql> SELECT addressBookType, count(*) FROM addressBook GROUP BY addressBookTyp
 | Family          |        1 |
 +-----------------+----------+
 3 rows in set (0.04 sec)
+
+----------------------------------UC11--------add person for family and friend------------------------------------------------------------------------
+
+//Here I have added person both for family and friend
+
+mysql> INSERT INTO addressBook VALUES
+    -> ('Mahek','Pandey','Mahalaxmi','Faridabad','Hariyana','456987','9533517598','mahak13@gmail.com','AddressBook4','Friend');
+Query OK, 1 row affected (0.07 sec)
+mysql> INSERT INTO addressBook VALUES
+    -> ('Rocky','Taylor','PaliHouse','Malhar','Goa',12543,9874327392,'rocky123@gmail.com','AddressBook_5','Boss');
+Query OK, 1 row affected (0.13 sec)
+mysql> INSERT INTO addressBook VALUES
+    -> ("aditya", "Bhosale", "shradha nagar", "mumbai", "maharashtra", 781568, 1235547892, "aditya@gmail.com", "addressBook_6", "Family");
+Query OK, 1 row affected (0.17 sec)
+mysql> SELECT * from addressbook;
++------------+----------+----------------+-----------+-------------+--------+-------------+--------------------------------+-----------------+-----------------+
+| firstName  | lastName | address        | city      | state       | zip    | phoneNumber | email                          | addressBookName | addressBookType |
++------------+----------+----------------+-----------+-------------+--------+-------------+--------------------------------+-----------------+-----------------+
+| aditya     | Bhosale  | shradha nagar  | mumbai    | maharashtra | 781568 |  1235547892 | aditya@gmail.com               | addressBook_6   | Family          |
+| Mahek      | Pandey   | Mahalaxmi      | Faridabad | Hariyana    | 456987 |  9533517598 | mahak13@gmail.com              | AddressBook4    | Friend          |
+| Mahi       | Pratap   | Kamaleshwarpur | Rohatang  | Laddakh     | 321654 |  8989685852 | mahi@gmail.com                 | AddressBook_2   | Friend          |
+| Rani       | Singh    | Rajapuram      | Chennai   | Kerala      | 450213 |  9969064650 | rani45@gmail.com               | AddressBook_3   | Boss            |
+| Rocky      | Taylor   | PaliHouse      | Malhar    | Goa         |  12543 |  9874327392 | rocky123@gmail.com             | AddressBook_5   | Boss            |
+| Shailendra | Kumar    | Chembur        | Mumbai    | Maharashtra | 400028 |  8779796556 | yshailendrakumar1768@gmail.com | AddressBook_1   | Family          |
++------------+----------+----------------+-----------+-------------+--------+-------------+--------------------------------+-----------------+-----------------+
+6 rows in set (0.05 sec)
