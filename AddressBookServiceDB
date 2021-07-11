@@ -1,0 +1,18 @@
+WELCOME TO ADDRESSBOOK SYSTEM
+---------UC1---Create Database-------------
+
+mysql> CREATE DATABASE AddressBook_service;
+Query OK, 1 row affected (0.34 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| information_schema  |
+| mysql               |
+| payroll_servises    |
+| performance_schema  |
+| sys                 |
++---------------------+
+6 rows in set (0.20 sec)
