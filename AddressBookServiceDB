@@ -91,3 +91,20 @@ mysql> SELECT * from addressbook;
 | Shailendra | Kumar    | Chembur        | Mumbai   | Maharashtra  | 400071 |  8779796556 | yshailendrakumar1768@gmail.com |
 +------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
 4 rows in set (0.00 sec)
+---------UC4---UPDATE CONTACTS BY NAME-------------------------------------------------------
+
+mysql> UPDATE addressbook SET zip = 400028 where firstName = 'Shailendra';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * from addressbook;
++------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
+| firstName  | lastName | address        | city     | state        | zip    | phoneNumber | email                          |
++------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
+| Mahesh     | jadhav   | vangali        | Noyada   | UtterPradesh | 501201 |  9969550645 | mahesh123@gmail.com            |
+| Mahi       | Pratap   | Kamaleshwarpur | Rohatang | Laddakh      | 321654 |  8989685852 | mahi@gmail.com                 |
+| Rani       | Singh    | Rajapuram      | Chennai  | Kerala       | 450213 |  9969064650 | rani45@gmail.com               |
+| Shailendra | Kumar    | Chembur        | Mumbai   | Maharashtra  | 400028 |  8779796556 | yshailendrakumar1768@gmail.com |
++------------+----------+----------------+----------+--------------+--------+-------------+--------------------------------+
+4 rows in set (0.04 sec)
+
