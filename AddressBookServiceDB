@@ -242,3 +242,15 @@ mysql> SELECT * from addressbook;
 +------------+----------+----------------+----------+-------------+--------+-------------+--------------------------------+-----------------+-----------------+
 3 rows in set (0.00 sec)
 
+---------UC10--- COUNT BY TYPE-------------------------------------------------------
+
+// Here I have count addressBookType
+mysql> SELECT addressBookType, count(*) FROM addressBook GROUP BY addressBookType;
++-----------------+----------+
+| addressBookType | count(*) |
++-----------------+----------+
+| Friend          |        1 |
+| Boss            |        1 |
+| Family          |        1 |
++-----------------+----------+
+3 rows in set (0.04 sec)
