@@ -125,3 +125,23 @@ mysql> SELECT * from addressbook;
 | Shailendra | Kumar    | Chembur        | Mumbai   | Maharashtra | 400028 |  8779796556 | yshailendrakumar1768@gmail.com |
 +------------+----------+----------------+----------+-------------+--------+-------------+--------------------------------+
 3 rows in set (0.05 sec)
+
+---------UC6---RETRIEVE CONTACTS BY -------------------------------------------------------
+
+// Here I retrieve contact by city
+mysql> SELECT * from addressbook where city = 'Mumbai';
++------------+----------+---------+--------+-------------+--------+-------------+--------------------------------+
+| firstName  | lastName | address | city   | state       | zip    | phoneNumber | email                          |
++------------+----------+---------+--------+-------------+--------+-------------+--------------------------------+
+| Shailendra | Kumar    | Chembur | Mumbai | Maharashtra | 400028 |  8779796556 | yshailendrakumar1768@gmail.com |
++------------+----------+---------+--------+-------------+--------+-------------+--------------------------------+
+1 row in set (0.00 sec)
+
+// Here I retrieve contact by state
+mysql> SELECT * from addressbook where state = 'Kerala';
++-----------+----------+-----------+---------+--------+--------+-------------+------------------+
+| firstName | lastName | address   | city    | state  | zip    | phoneNumber | email            |
++-----------+----------+-----------+---------+--------+--------+-------------+------------------+
+| Rani      | Singh    | Rajapuram | Chennai | Kerala | 450213 |  9969064650 | rani45@gmail.com |
++-----------+----------+-----------+---------+--------+--------+-------------+------------------+
+1 row in set (0.00 sec)
